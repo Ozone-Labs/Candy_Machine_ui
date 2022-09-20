@@ -1,0 +1,478 @@
+.neroBody {
+  max-width: 707px;
+  width: 98%;
+  display: flex;
+  bottom: 0px;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+  }
+
+  .neroContainer {
+    max-width: 745px;
+    width: 100%;
+    color: white;
+    padding: 42px;
+    padding-bottom: 48px;
+    background: linear-gradient(rgb(0, 0, 0, 0), rgb(48, 86, 86, 0.5));
+    border-radius: 40px;
+    margin: auto;
+
+    @media (max-width: 580px) {
+      padding: 20px;
+    }
+
+    .title {
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .nero-title {
+        font-family: 'VALORANT';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 45px;
+        line-height: 38px;
+        text-transform: uppercase;
+        margin: 10px 0px;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+      }
+
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .progress-info-left {
+        font-family: VALORANT;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      .progress-info-right {
+        font-family: Poppins;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: right;
+
+      }
+    }
+
+    .progress {
+      width: 100%;
+    }
+
+    .countdown {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid #FFFFFF;
+      width: 168px;
+      height: 50px;
+      margin-top: 30px;
+
+      img {
+        width: 16.01px;
+        height: 18.99px;
+        margin-right: 10px;
+      }
+
+      div {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+
+    .desc-title {
+      font-family: VALORANT;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 40px;
+      text-transform: uppercase;
+      margin: 20px 0px;
+      display: flex;
+    }
+
+    .desc {
+      font-family: sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 26px;
+      /* or 144% */
+
+      letter-spacing: 0em;
+    }
+
+    .info {
+      display: flex;
+      max-width: 293px;
+      width: 100%;
+      height: 50px;
+      justify-content: space-around;
+      margin: 30px 0px;
+      align-items: center;
+
+      .info-left-image {
+        // background: url(../../../public);
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+      }
+
+      .info-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 18px;
+
+
+
+        .info-left-div1 {
+          font-family: VALORANT;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          text-align: left;
+          // line-height: 22px;
+          // line-height: 18px;
+        }
+
+        .info-left-div2 {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          // line-height: 35px;
+        }
+
+        .info-left-div3 {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          // line-height: 24px;
+        }
+
+
+      }
+
+      .info-right {
+        font-family: 'VALORANT';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+
+        // line-height: 40px;
+        .bunding {
+          font-size: 30px;
+          color: #FBEC96;
+        }
+
+        .big-text {
+          font-size: 16px;
+        }
+
+        .small-text {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .info-left-div4 {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      justify-content: flex-start;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2vh;
+      margin-top: 30px;
+
+      img {
+        width: 35px;
+        height: 35px;
+        margin-right: 5px;
+      }
+
+
+      .info-price {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        display: flex;
+      }
+
+      .info-sol-sign {
+        display: flex;
+        width: auto;
+        align-items: center;
+
+        span {
+          font-family: 'Poppins';
+          font-weight: 500;
+          font-size: 16px;
+          margin: 0px 5px;
+        }
+      }
+    }
+
+    .nero-bottom {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      max-width: 620px;
+      width: 100%;
+      margin-top: 60px;
+
+      .mint-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 382px;
+        width: 100%;
+        margin: 0px 20px;
+        margin-bottom: 0px;
+        height: 55px;
+        // background: linear-gradient(90deg, rgba(124, 215, 214, 0.63) -20.79%, #FBF454 99.88%, rgba(251, 244, 84, 0.65) 99.88%);
+        // background: #F6B9FF;
+        background: linear-gradient(#FAD4FF 0%, #F6AAFF 100%);
+        font-family: 'VALORANT';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 33px;
+        color: black;
+        cursor: pointer;
+
+
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+
+      .nero-bottom-left {
+        width: 50%;
+        display: flex;
+        border: 1px solid #FBEC96;
+        height: 60px;
+        justify-content: space-around;
+        align-items: center;
+
+        .sign {
+          font-family: Poppins;
+          font-size: 30px;
+          font-weight: 400;
+          line-height: 45px;
+          letter-spacing: 0em;
+          text-align: center;
+          cursor: pointer;
+        }
+
+        .value {
+          width: 80px;
+          height: 80px;
+
+          background: #FBEC96;
+          font-family: VALORANT;
+          font-size: 30px;
+          font-weight: 400;
+          line-height: 33px;
+          letter-spacing: 0em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+        }
+      }
+
+      .nero-bottom-right {
+        // width: 40%;
+        border: 1px solid #7CD7D6;
+        font-family: VALORANT;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 33px;
+        letter-spacing: 0em;
+        text-align: center;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .mintbtn-active {
+        background: #B8B8B8;
+
+        .font15 {
+          font-size: 15px;
+
+          @media (max-width: 1023px) {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .defaultcolor {
+        background: linear-gradient(rgba(255, 255, 255, 20), rgba(246, 185, 255, 100));
+
+        &:hover {
+          transition-duration: 0.3s;
+          background: linear-gradient(#BDF2F8 0%, #88F5FE 100%);
+        }
+      }
+
+      @media (max-width: 580px) {
+        flex-direction: column;
+        margin-bottom: 0px;
+
+        .mint-operator {
+          margin: auto;
+          max-width: 260px;
+        }
+
+        .mint-btn {
+          margin: 20px auto;
+          max-width: 260px;
+        }
+      }
+    }
+
+    @media (max-width: 575px) {
+      .title .nero-title {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .title .nero-title {
+        font-size: 23px;
+      }
+    }
+  }
+
+  .gif {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    img {
+      width: 100vw;
+      height: auto;
+    }
+
+  }
+}
+
+@media (max-width: 1440px) {
+  .neroBody .neroContainer .title div {
+    // font-size: 40px;
+  }
+
+  .neroBody .neroContainer .desc-title {
+    font-size: 30px;
+  }
+
+  .neroBody .neroContainer .info .info-right .bunding {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .neroBody .neroContainer {
+    // width: 98%;
+    // margin-left: 2%;
+  }
+
+  .neroBody .neroContainer .title div {
+    font-size: 30px;
+  }
+
+  .neroBody .neroContainer .desc-title {
+    font-size: 20px;
+  }
+
+  .neroBody .neroContainer .info .info-right .bunding {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .neroBody {
+    .neroContainer {
+      .title {
+        .nero-title {
+          font-size: 30px;
+          margin: 30px 0px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .neroBody .neroContainer .title div {
+    font-size: 30px;
+  }
+
+  .neroBody .neroContainer .desc-title {
+    font-size: 20px;
+  }
+
+  .neroBody .neroContainer .info .info-right .bunding {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .neroBody .neroContainer {
+    .title {
+      .nero-title {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+.font15 {
+  font-size: 15px;
+
+  @media (max-width: 1023px) {
+    font-size: 12px;
+  }
+}

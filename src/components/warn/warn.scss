@@ -1,0 +1,27 @@
+.warn-body {
+    position: fixed;
+    // left: 1.09%;
+    right: 1.09%;
+    top: 7.14%;
+    // bottom: 7.14%;
+    // width: 450px;
+    // height: 60px;
+    padding: 20px;
+
+    background: #FBEC96;
+    border: 1px solid #FBEC96;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+    /* or 129% */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    cursor: pointer;
+    z-index: 100;
+}
