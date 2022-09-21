@@ -61,44 +61,51 @@ export const MintButton = ({
     }, [gatewayStatus, clicked, setClicked, onMint]);
 
     return (
-        <CTAButton
-            disabled={
-                clicked ||
-                candyMachine?.state.isSoldOut ||
-                isSoldOut ||
-                isMinting ||
-                isEnded ||
-                !isActive ||
-                isVerifying
-            }
-            onClick={async () => {
-                if (isActive && candyMachine?.state.gatekeeper && gatewayStatus !== GatewayStatus.ACTIVE) {
-                    console.log('Requesting gateway token');
-                    setClicked(true);
-                    await requestGatewayToken();
-                } else {
-                    console.log('Minting...');
-                    await onMint();
-                }
-            }}
-            variant="contained"
-        >
-            {!candyMachine ? (
-                "CONNECTING..."
-            ) : candyMachine?.state.isSoldOut || isSoldOut ? (
-                'SOLD OUT'
-            ) : isActive ? (
-                isVerifying ? 'VERIFYING...' :
-                    isMinting || clicked ? (
-                        <CircularProgress/>
-                    ) : (
-                        "MINT"
-                    )
-            ) : isEnded ? "ENDED" : (candyMachine?.state.goLiveDate ? (
-                "SOON"
-            ) : (
-                "UNAVAILABLE"
-            ))}
-        </CTAButton>
+      <CTAButton
+        disabled={
+          clicked ||
+          candyMachine?.state.isSoldOut ||
+          isSoldOut ||
+          isMinting ||
+          isEnded ||
+          !isActive ||
+          isVerifying
+        }
+        onClick={async () => {
+          if (
+            isActive &&
+            candyMachine?.state.gatekeeper &&
+            gatewayStatus !== GatewayStatus.ACTIVE
+          ) {
+            console.log("Requesting gateway token");
+            setClicked(true);
+            await requestGatewayToken();
+          } else {
+            console.log("Minting...");
+            await onMint();
+          }
+        }}
+        variant="contained"
+      >
+        {!candyMachine ? (
+          "Kindly Connect Your walllet"
+        ) : candyMachine?.state.isSoldOut || isSoldOut ? (
+          "SOLD OUT"
+        ) : isActive ? (
+          isVerifying ? (
+            "VERIFYING..."
+          ) : isMinting || clicked ? (
+            <CircularProgress />
+          ) : (
+            "MINT"
+          )
+        ) : isEnded ? (
+          "ENDED"
+        ) : candyMachine?.state.goLiveDate ? (
+          "SOON"
+        ) : (
+          "UNAVAILABLE"
+        )}
+      </CTAButton>
     );
 };
