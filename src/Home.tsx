@@ -860,17 +860,26 @@ const Home = (props: HomeProps) => {
                 </div>
                 <div onClick={() => setSign(2)} className="menuItem">
                   <div className={pagesign === 2 ? "text textstroke" : "text"}>
-                    Ark COLLECTION
+                    <a
+                      href="http://www.eewhitepaper.design/wp-content/uploads/2022/09/elveswp.pdf"
+                      target="_blank"
+                    >
+                      WhitePaper
+                    </a>
                   </div>
                 </div>
                 <div onClick={() => setSign(3)} className="menuItem">
                   <div className={pagesign === 3 ? "text textstroke" : "text"}>
-                    Ark CHAMBER
+                    <a href="www.website.com" target="_blank">
+                      Website
+                    </a>
                   </div>
                 </div>
                 <div onClick={() => setSign(4)} className="menuItem">
                   <div className={pagesign === 4 ? "text textstroke" : "text"}>
-                    story and lore
+                    <a href=" https://twitter.com/EasyElves" target="_blank">
+                      Twitter
+                    </a>
                   </div>
                 </div>
               </div>
@@ -912,21 +921,33 @@ const Home = (props: HomeProps) => {
                       <div
                         className={pagesign === 2 ? "text textstroke" : "text"}
                       >
-                        Ark COLLECTION
+                        <a
+                          href="http://www.eewhitepaper.design/wp-content/uploads/2022/09/elveswp.pdf"
+                          target="_blank"
+                        >
+                          WhitePaper
+                        </a>
                       </div>
                     </div>
                     <div onClick={() => setSign(3)} className="menuItem">
                       <div
                         className={pagesign === 3 ? "text textstroke" : "text"}
                       >
-                        Ark CHAMBER
+                        <a href="www.website.com" target="_blank">
+                          Website
+                        </a>
                       </div>
                     </div>
                     <div onClick={() => setSign(4)} className="menuItem">
                       <div
                         className={pagesign === 4 ? "text textstroke" : "text"}
                       >
-                        story and lore
+                        <a
+                          href=" https://twitter.com/EasyElves"
+                          target="_blank"
+                        >
+                          Twitter
+                        </a>
                       </div>
                     </div>
                   </div>
