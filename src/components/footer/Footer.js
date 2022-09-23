@@ -17,7 +17,7 @@ const Footer = () => {
                     <div className='footer-right'>
 
                         <div className='footer-right-top'>
-                            <div className='foot-bottom-right-text'>© 2022 The Easy Elves</div>
+                            <div className='foot-bottom-right-text'>© 2022 Easy Elves</div>
                             <div className='footer-img-flex'>
                                 <a href='https://discord.gg/EasyElves' target="_blank"
                                 >
