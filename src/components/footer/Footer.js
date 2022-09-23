@@ -17,12 +17,14 @@ const Footer = () => {
                     <div className='footer-right'>
 
                         <div className='footer-right-top'>
-                            <div className='foot-bottom-right-text'>© 2022 The Cognitive Ark</div>
+                            <div className='foot-bottom-right-text'>© 2022 The Easy Elves</div>
                             <div className='footer-img-flex'>
-                                <img src='/assets/WhatsApp.png' alt='WhatsApp.png' />
-                                <img src='/assets/Instagram.png' alt='Instagram.png' />
-                                <img src='/assets/Discord.png' alt='Discord.png' />
-                                <img src='/assets/Google.png' alt='Google.png' />
+                                <a href='https://discord.gg/EasyElves' target="_blank"
+                                >
+                                    <img src='/assets/Discord.png' alt='Discord.png' /></a>
+                                <a href='https://twitter.com/EasyElves' target="_blank"
+                                >
+                                    <img src='/assets/twitterlogoundercircel.png' alt='twitter.png' /></a>
                             </div>
                         </div>
                     </div>
