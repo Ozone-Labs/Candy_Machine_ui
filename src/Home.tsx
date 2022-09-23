@@ -1035,9 +1035,9 @@ const Home = (props: HomeProps) => {
                     </div>
                     <div className="desc-title">Description</div>
                     <div className="desc">
-                      Limited 500 NFTs that represent a token of remembrance. A
-                      memento for the brave survivor who is still pursuing a
-                      meaning of freedom.
+                      Solana's genesis collection of 8888 Easy Elves inciting
+                      revolution throughout the city of Sindaria. <br /> Join
+                      the EASY movement.
                       {/* There's no limit to the strength of men. Everyone has a unique way to express this abstract work. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. */}
                     </div>
                     <div className="info-left-div4">
