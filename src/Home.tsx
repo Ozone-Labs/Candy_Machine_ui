@@ -1043,7 +1043,7 @@ const Home = (props: HomeProps) => {
                     <div className="info-left-div4">
                       <div className="info-price">Price</div>
                       <div className="info-sol-sign">
-                        <img src="/assets/TLSToken.png" alt="price-icon" />
+                        <img src="/assets/sollogo.png" alt="price-icon" />
                         {isActive &&
                         whitelistEnabled &&
                         whitelistTokenBalance > 0
