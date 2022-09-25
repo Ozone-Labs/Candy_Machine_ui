@@ -1031,7 +1031,24 @@ const Home = (props: HomeProps) => {
                     </div>
                     <div className="countdown">
                       <img src="/assets/clock_icon.png" alt="clcok" />
-                      <div>00:00:00</div>
+                      <div>
+                        {!isActive &&
+                        !isEnded &&
+                        candyMachine?.state.goLiveDate &&
+                        (!isWLOnly || whitelistTokenBalance > 0) ? (
+                          <Countdown
+                            date={toDate(candyMachine?.state.goLiveDate)}
+                            onMount={({ completed }) =>
+                              completed && setIsActive(!isEnded)
+                            }
+                            onComplete={() => {
+                              setIsActive(!isEnded);
+                            }}
+                          />
+                        ) : (
+                          <h1></h1>
+                        )}
+                      </div>
                     </div>
                     <div className="desc-title">Description</div>
                     <div className="desc">
