@@ -118,5 +118,8 @@ video {
     object-fit: cover;
 }
 .beforeconnect {
-    color: black;
+    color: rgb(255, 255, 255);
+        font-style: bold;
+        font-weight: 100;
+        font-size: large;
 }

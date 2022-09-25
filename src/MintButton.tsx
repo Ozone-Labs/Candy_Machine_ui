@@ -19,7 +19,7 @@ export const CTAButton = styled(Button)`
   height: 55px;
   // background: linear-gradient(90deg, rgba(124, 215, 214, 0.63) -20.79%, #FBF454 99.88%, rgba(251, 244, 84, 0.65) 99.88%);
   // background: #F6B9FF;
-  background: linear-gradient(#fad4ff 0%, #f6aaff 100%);
+  background: linear-gradient(180deg, #604ae5 0%, #813eee 100%);
   font-family: "VALORANT";
   font-style: normal;
   font-weight: 400;
@@ -30,65 +30,69 @@ export const CTAButton = styled(Button)`
 `;
 
 export const MintButton = ({
-                               onMint,
-                               candyMachine,
-                               isMinting,
-                               isEnded,
-                               isActive,
-                               isSoldOut
-                           }: {
-    onMint: () => Promise<void>;
-    candyMachine?: CandyMachineAccount;
-    isMinting: boolean;
-    isEnded: boolean;
-    isActive: boolean;
-    isSoldOut: boolean;
+  onMint,
+  candyMachine,
+  isMinting,
+  isEnded,
+  isActive,
+  isSoldOut,
+}: {
+  onMint: () => Promise<void>;
+  candyMachine?: CandyMachineAccount;
+  isMinting: boolean;
+  isEnded: boolean;
+  isActive: boolean;
+  isSoldOut: boolean;
 }) => {
-    const {requestGatewayToken, gatewayStatus} = useGateway();
-    const [clicked, setClicked] = useState(false);
-    const [isVerifying, setIsVerifying] = useState(false);
+  const { requestGatewayToken, gatewayStatus } = useGateway();
+  const [clicked, setClicked] = useState(false);
+  const [isVerifying, setIsVerifying] = useState(false);
 
-    useEffect(() => {
-        setIsVerifying(false);
-        if (gatewayStatus === GatewayStatus.COLLECTING_USER_INFORMATION && clicked) {
-            // when user approves wallet verification txn
-            setIsVerifying(true);
-        } else if (gatewayStatus === GatewayStatus.ACTIVE && clicked) {
-            console.log('Verified human, now minting...');
-            onMint();
-            setClicked(false);
-        }
-    }, [gatewayStatus, clicked, setClicked, onMint]);
+  useEffect(() => {
+    setIsVerifying(false);
+    if (
+      gatewayStatus === GatewayStatus.COLLECTING_USER_INFORMATION &&
+      clicked
+    ) {
+      // when user approves wallet verification txn
+      setIsVerifying(true);
+    } else if (gatewayStatus === GatewayStatus.ACTIVE && clicked) {
+      console.log("Verified human, now minting...");
+      onMint();
+      setClicked(false);
+    }
+  }, [gatewayStatus, clicked, setClicked, onMint]);
 
-    return (
-      <CTAButton
-        disabled={
-          clicked ||
-          candyMachine?.state.isSoldOut ||
-          isSoldOut ||
-          isMinting ||
-          isEnded ||
-          !isActive ||
-          isVerifying
+  return (
+    <CTAButton
+      disabled={
+        clicked ||
+        candyMachine?.state.isSoldOut ||
+        isSoldOut ||
+        isMinting ||
+        isEnded ||
+        !isActive ||
+        isVerifying
+      }
+      onClick={async () => {
+        if (
+          isActive &&
+          candyMachine?.state.gatekeeper &&
+          gatewayStatus !== GatewayStatus.ACTIVE
+        ) {
+          console.log("Requesting gateway token");
+          setClicked(true);
+          await requestGatewayToken();
+        } else {
+          console.log("Minting...");
+          await onMint();
         }
-        onClick={async () => {
-          if (
-            isActive &&
-            candyMachine?.state.gatekeeper &&
-            gatewayStatus !== GatewayStatus.ACTIVE
-          ) {
-            console.log("Requesting gateway token");
-            setClicked(true);
-            await requestGatewayToken();
-          } else {
-            console.log("Minting...");
-            await onMint();
-          }
-        }}
-        variant="contained"
-      >
+      }}
+      variant="contained"
+    >
+      <div className="beforeconnect">
         {!candyMachine ? (
-          <div className="beforeconnect"> Connect Walllet</div>
+          "Connecting...."
         ) : candyMachine?.state.isSoldOut || isSoldOut ? (
           "SOLD OUT"
         ) : isActive ? (
@@ -97,7 +101,7 @@ export const MintButton = ({
           ) : isMinting || clicked ? (
             <CircularProgress />
           ) : (
-            "MINT"
+            "MINT NOW"
           )
         ) : isEnded ? (
           "ENDED"
@@ -106,6 +110,7 @@ export const MintButton = ({
         ) : (
           "UNAVAILABLE"
         )}
-      </CTAButton>
-    );
+      </div>
+    </CTAButton>
+  );
 };
