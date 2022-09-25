@@ -1046,7 +1046,7 @@ const Home = (props: HomeProps) => {
                             }}
                           />
                         ) : (
-                          <h1></h1>
+                          <h1> WL Mint IS LIVE </h1>
                         )}
                       </div>
                     </div>
